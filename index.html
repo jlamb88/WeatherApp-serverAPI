@@ -5,27 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather Now!</title>
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link 
+      rel="stylesheet" 
+      href="./assets/css/reset.css">
+    <link 
+      rel="stylesheet" 
+      href="./assets/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
   </head>
+
   <body>
-    <background-img src="./assets/images/clouds.jpg"
-    <header class="header">
-   
+       
+    <header class="container-fluid">
+      <h1>WEATHER NOW</h1>
     </header>    
     
-    <div class="splash"></div>
+    <splash class="splash"></splash>
     
-    <article class ="article">
-
-    </article>
+    <main class="container-fluid">
+      <section class="row">
+          <search class="col-2">
+            <current-search class="row pl-3">SEARCH</current-search>
+            <search-history class="row pl-3">HISTORY</search-history>
+          </search>
+          <weather-info class="col-10">
+              <today class="row border border-dark">
+              <city-date class="col-12"><h1>TEST CITY/DATE</h1></city-date> 
+              <detail class="col-12">
+                <section class="row">
+                <data class="col-3 justify-content left pl-3">Temp</data>
+                <description class="col-3 justify-content left pl-3">Description</description>
+                </section>
+              </detail>
+              </today>
+              <future class="row cols-5">
+              <card class="col card m-2">+1day</card>
+              <card class="col card m-2">+2day</card>
+              <card class="col card m-2">+3day</card>
+              <card class="col card m-2">+4day</card>
+              <card class="col card m-2">+5day</card>
+            </future>
+          </weather-info>
+        </section>
+     </main>
 
     <footer class="footer">
         
       <p>
-          &copy; 2022
+          <h5>&copy; 2022</h5>
       </p>
-    </footer>  
-  </body>
+    </footer>
+   </body>
 <script src="./assets/javascript/script.js"></script>
 </html>
