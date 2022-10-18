@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+html {
+    font-size:100%;
+}
+
 body {
     background-image: url('/assets/images/clouds.jpg');
     background-repeat: no-repeat;
@@ -11,7 +15,6 @@ body {
     background-size: cover;
     background-color: rgba(205, 205, 205, 0.6);
     background-blend-mode: lighten;
-    font-size: 62.5%;
     padding: 2em;
   }
 
@@ -30,10 +33,6 @@ p {
     font-size: 1.6rem;
 }
 
-
-
-.splash {
-}
 
 .float-left {
     float: left;
@@ -56,5 +55,5 @@ p {
 .footer h2 {
     font-size: 1.2rem;
 }
-
-@media screen and (max-width: 768px)
+/* 
+@media screen and (max-width: 768px) */

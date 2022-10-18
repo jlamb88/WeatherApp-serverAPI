@@ -8,12 +8,12 @@ dailyForecast = [];
 //TEST API
 fetch("./assets/test.JSON")
 
-.then ((response) => response.json())
+.then (response => response.json())
 .then (function (data) {
     dailyForecast.push(data.city.name);
     makeWeatherObj(data,0);
     dailyForecast.push(weather);
-    startHour=moment.utc(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss").local().format("HH")
+    startHour=moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss").local().format("HH")
     startT=8-(Math.floor((startHour-12)/3))
     for (t=startT; t<40; t+=8) 
         { 
@@ -45,18 +45,25 @@ fetch("./assets/test.JSON")
         }
     }
 )
+console.log (dailyForecast);
 
-var location = dailyForecast[0];
-var today = moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss").format("dddd MMMM, Do YYYY")
-var nowIcon = dailyForecast[1].weatherIcon
-var nowTemp = dailyForecast[1].temp
-var nowFeelsLike = dailyforecast[1].heatIndex
-var nowHumidity = dailyForecast[1].humidity
-var nowWind = dailyForecast[1].wind
-var nowLowTemp = dailyForecast[1].low
-var nowHighTemp = dailyForecast[1].high
-var nowDetails = dailyForcast[1].weatherDtl
+// let testDB = dailyForecast;
+// console.log(testDB);
+let cityLoc = dailyForecast[0];
+// console.log(cityLoc);
+let weatherDay2 = dailyForecast[1];
+console.log(weatherDay2);
+// var today = moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss")//.format("dddd MMMM, Do YYYY")
+// var todayDt = dailyForecast[1].dateTxt
+// var nowIcon = dailyForecast[1].weatherIcon
+// var nowTemp = dailyForecast[1].temp
+// var nowFeelsLike = dailyforecast[1].heatIndex
+// var nowHumidity = dailyForecast[1].humidity
+// var nowWind = dailyForecast[1].wind
+// var nowLowTemp = dailyForecast[1].low
+// var nowHighTemp = dailyForecast[1].high
+// var nowDetails = dailyForcast[1].weatherDtl
 
 
-$('<city-date>').text(location+' '+today)
-
+// $('city-name').textValue(location+' '+cityLoc);
+// console.log(cityDate);
