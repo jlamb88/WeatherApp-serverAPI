@@ -43,27 +43,28 @@ fetch("./assets/test.JSON")
         }
         return weather;
         }
-    }
-)
+   
 console.log (dailyForecast);
 
-// let testDB = dailyForecast;
-// console.log(testDB);
 let cityLoc = dailyForecast[0];
-// console.log(cityLoc);
-let weatherDay2 = dailyForecast[1];
-console.log(weatherDay2);
-// var today = moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss")//.format("dddd MMMM, Do YYYY")
-// var todayDt = dailyForecast[1].dateTxt
-// var nowIcon = dailyForecast[1].weatherIcon
-// var nowTemp = dailyForecast[1].temp
-// var nowFeelsLike = dailyforecast[1].heatIndex
-// var nowHumidity = dailyForecast[1].humidity
-// var nowWind = dailyForecast[1].wind
-// var nowLowTemp = dailyForecast[1].low
-// var nowHighTemp = dailyForecast[1].high
-// var nowDetails = dailyForcast[1].weatherDtl
+console.log(cityLoc);
+var todayDt = moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss").format("dddd MMMM, Do YYYY")
+var nowIcon = dailyForecast[1].weatherIcon
+var nowTemp = dailyForecast[1].temp
+var nowFeelsLike = dailyForecast[1].heatIndex
+var nowHumidity = dailyForecast[1].humidity
+var nowWind = dailyForecast[1].wind
+var nowLowTemp = dailyForecast[1].low
+var nowHighTemp = dailyForecast[1].high
+var nowDetails = dailyForecast[1].weatherDtl
 
 
-// $('city-name').textValue(location+' '+cityLoc);
-// console.log(cityDate);
+var cityDt = cityLoc+' forecast: '+todayDt
+console.log(cityDt)
+$("#city-name").append('<h2>'+cityDt+'<h2>');
+
+
+
+
+}
+)
