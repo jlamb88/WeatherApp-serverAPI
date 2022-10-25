@@ -23,7 +23,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
   </head>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <body>
        
     <header class="container-fluid">
@@ -40,21 +40,16 @@
           </search>
           <weather-info class="col-10">
               <today class="row border border-dark">
-              <section class="col-12" id="city-date"></section> 
+              <section class="col-12" id="city-date"><p></p></section> 
               <detail class="col-12">
                 <section class="row">
-                <data class="col-3 justify-content left pl-3">Temp</data>
-                <description class="col-3 justify-content left pl-3">Description</description>
+                <data class="col-3 justify-content left pl-3"><ul></ul></data>
+                <description class="col-3 justify-content left pl-3">Description: </description>
                 </section>
               </detail>
               </today>
               <future class="row cols-5">
-              <card class="col card m-2">+1day</card>
-              <!-- <card class="col card m-2">+2day</card>
-              <card class="col card m-2">+3day</card>
-              <card class="col card m-2">+4day</card>
-              <card class="col card m-2">+5day</card> -->
-            </future>
+              </future>
           </weather-info>
         </section>
      </main>

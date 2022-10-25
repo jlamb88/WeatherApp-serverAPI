@@ -47,7 +47,6 @@ fetch("./assets/test.JSON")
 console.log (dailyForecast);
 
 let cityLoc = dailyForecast[0];
-console.log(cityLoc);
 var todayDt = moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss").format("dddd MMMM, Do YYYY")
 var nowIcon = dailyForecast[1].weatherIcon
 var nowTemp = dailyForecast[1].temp
@@ -56,24 +55,20 @@ var nowHumidity = dailyForecast[1].humidity
 var nowWind = dailyForecast[1].wind
 var nowDetails = dailyForecast[1].weatherDtl
 
-
-var cityDt = cityLoc+' forecast: '+todayDt;
-console.log(cityDt)
-$("#city-name").append('<h2>'+cityDt+'<h2>');
+$("#city-date").append('<h3>'+cityLoc+'</h3>')
+$('#city-date').append('<img src="http://openweathermap.org/img/wn/'+nowIcon+'@2x.png> id="now-icon" alt="weather now icon"')
+$('data').append('<li>Temp: '+nowTemp+'<sup>o</sup></li><li>Humidity: '+nowHumidity+'%</li><li>Feels like: '+nowFeelsLike+'<sup>o</sup></li><li>Wind: '+nowWind+' mph</li>')
 
 for (i=2;i<=6;i++) {
-d=i-2;
-dayWkday=moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss").format("dddd")
+d=i-1;
+dayWkday=moment(dailyForecast[i].dateTxt,"YYYY-MM-DD HH:mm:ss").format("dddd")
 dayTemp=dailyForecast[i].temp
 dayIcon=dailyForecast[i].weatherIcon
 dayHumidity=dailyForecast[i].humidity
 dayWind=dailyForecast[i].wind
-newCard=$('<card>',{class: 'col card m-2', id: 'day'+d,style: "height:30rem", innerHTML: '<div class="card-body"><h4 class="card-title">'+dayWkday+'</h4></br><img src="'+dayIcon+'"class="card-img" id="card-icon" alt="weather icon"><ul class="card-text" id="day-dtls"><li>Temperature: '+dayTemp+'</li><li>Humidity: '+dayHumidity+'</li><li>Wind: '+dayWind+'</li></ul></div>'})
+newCard=$('<card>',{class: 'col card m-2', id: 'day'+d,style: "height:20rem", html: '<div class="card-body"><h5 class="card-title">'+dayWkday+'</h5><img src="http://openweathermap.org/img/wn/'+dayIcon+'@2x.png "class="card-img" id="card-icon" alt="weather icon"><ul class="card-text" id="day-dtls"><li>Temp: '+dayTemp+'<sup>o</sup></li><li>Humidity: '+dayHumidity+'%</li><li>Wind: '+dayWind+' mph</li></ul></div>'})
+$("future").append(newCard)
 
-console.log(newCard);
-futureEl = $("<future>")
-futureEl.append(newCard)
-$("<future>").text("This is a TEST")
 // $('<future>').append('<div>').addClass("col card m-2").attr("id",'day'+d).attr("style","height:30rem").innerHTML('<div class="card-body"><h4 class="card-title">'+dayWkday+'</h4></br><img src="'+dayIcon+'"class="card-img" id="card-icon" alt="weather icon"><ul class="card-text" id="day-dtls"><li>Temperature: '+dayTemp+'</li><li>Humidity: '+dayHumidity+'</li><li>Wind: '+dayWind+'</li></ul></div>')
 }
 return;
