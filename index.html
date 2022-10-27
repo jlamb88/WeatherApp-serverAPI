@@ -8,12 +8,15 @@
     <link 
       rel="stylesheet" 
       href="./assets/css/reset.css">
-    <link 
-      rel="stylesheet" 
-      href="./assets/css/style.css">
+    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+      <link 
+      rel="stylesheet" 
+      href="./assets/css/style.css">
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -23,11 +26,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
   </head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <body>
-       
-    <header class="container-fluid">
-      <h1>WEATHER NOW</h1>
+
+  <header class="container-fluid">
+      <h2>Weather Now</h2>
     </header>    
     
     <splash class="splash"></splash>
@@ -35,16 +38,31 @@
     <main class="container-fluid">
       <section class="row">
           <search class="col-2">
-            <current-search class="row pl-3">SEARCH</current-search>
+            <current-search class="row pl-2">
+              <label>Find Your Weather</label>
+              <input type="search" placeholder=" enter city or zip" id="search"><button id="searchBtn">Search</button></current-search>
             <search-history class="row pl-3">HISTORY</search-history>
           </search>
-          <weather-info class="col-10">
-              <today class="row border border-dark">
-              <section class="col-12" id="city-date"><p></p></section> 
+
+          <weather-info class="col-9">
+              <today class="row border border-dark mb-1">
+              <section class="col-12" id="city-date"></section> 
               <detail class="col-12">
                 <section class="row">
-                <data class="col-3 justify-content left pl-3"><ul></ul></data>
-                <description class="col-3 justify-content left pl-3">Description: </description>
+                <heading class="col ml-4">
+                  <ul>
+                    <li>Temp:</li>
+                    <li>Humidity:</li>
+                    <li>Feels like:</li>
+                    <li>Wind:</li>
+                  </ul>
+                </heading>
+                <dataCon class="col">
+                  <ul id="data"></ul>
+                </dataCon>
+                <description class="col-9 pl-3">
+                  <ul></ul>
+                </description>
                 </section>
               </detail>
               </today>
@@ -60,8 +78,10 @@
           <h5>&copy; 2022</h5>
       </p>
     </footer>
+  
    </body>
 <script src="./assets/javascript/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </html>

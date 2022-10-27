@@ -9,19 +9,24 @@ html {
 }
 
 body {
-    background-image: url('/assets/images/clouds.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: rgba(205, 205, 205, 0.6);
+    background-image: url('/assets/images/clouds.jpg');
+    background-color: rgba(127, 152, 190, 0.7);
     background-blend-mode: lighten;
     padding: 2em;
   }
 
+
 header {
-    padding: 2em;
+    padding: 1em;
+    margin-bottom: 1em;
     font-family: Arial, Helvetica, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
-    height:8em;
+    height:4em;
+    background-image: linear-gradient(to right bottom,darkblue,aliceblue);
+    opacity: 0.5;
+    color:rgb(246, 246, 246)
    }
 
 a {
@@ -33,6 +38,9 @@ p {
     font-size: 1.6rem;
 }
 
+ul {
+    list-style-type: none;
+}
 
 .float-left {
     float: left;
@@ -44,7 +52,34 @@ p {
     margin-left: 25px;
 }
 
+.card-text li, data, description, button, label {
+    color:darkslategrey;
+}
 
+#now-icon, #card-icon {
+    background-color: rgba(203, 238, 248, 0.8);
+    opacity:1;
+    width: 140px;
+    height: 140px;
+    
+}
+
+    
+today, .card {
+    background-color:rgba(224, 224, 210, 0.668);
+    opacity: 0.9;
+    border-radius: 5px;
+   }
+
+input {
+    margin-bottom: 0.8em
+}
+
+button {
+    width: 6em;
+    border-color: rgba(35, 35, 133, 0.531);
+}
+   
 .footer {
     padding: 3em;
     clear: both;
