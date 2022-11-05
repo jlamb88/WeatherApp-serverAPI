@@ -6,14 +6,14 @@ function weatherSearch(loc) {
   apiKey = "20f82cbfb698e805cd598e366c3108b2";
   if ($.isNumeric(loc)) {
     fetchAPI =
-      'http://api.openweathermap.org/data/2.5/forecast?zip='+loc+'&units=imperial&appid='+apiKey;
+      'https://api.openweathermap.org/data/2.5/forecast?zip='+loc+'&units=imperial&appid='+apiKey;
   } else {if (loc.includes(",")) {
     stateChk = loc.slice(-2)
     if (checkState(stateChk)) {
       loc = loc + ", US";
     }}
     fetchAPI =
-      'http://api.openweathermap.org/data/2.5/forecast?q='+loc+'&units=imperial&appid='+apiKey;
+      'https://api.openweathermap.org/data/2.5/forecast?q='+loc+'&units=imperial&appid='+apiKey;
   }
     
   $('#data').empty()
