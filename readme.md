@@ -1,8 +1,7 @@
 # 6- Weather - Server-side APIs
 ## Description
 Weather application to provide current and five day forecast with visual icons to represent conditions
-
-###User Story
+### User Story
 ```
 AS A traveler
 I WANT to see the weather outlook for multiple cities
@@ -20,22 +19,20 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
-
-
 ## Installation
 
 GitHub: https://github.com/jlamb88/6-WeatherApp-serverAPIs.git
 
-URL:
+URL: https://jlamb88.github.io/6-WeatherApp-serverAPIs/
 
 ## Usage
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![alt text](assets/images/screenshot.png)
+
 
 ## Credits
 Primary Developer: Joseph Lamb
+
 Github: https://github.com/jlamb88
 
 ## Badges
