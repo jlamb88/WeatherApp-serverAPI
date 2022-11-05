@@ -1,87 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Weather Now!</title>
-    <link 
-      rel="stylesheet" 
-      href="./assets/css/reset.css">
-    
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-      <link 
-      rel="stylesheet" 
-      href="./assets/css/style.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Weather Now!</title>
+  <link rel="stylesheet" href="./assets/css/reset.css">
 
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous">
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-  </head>
-  
-  <body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
 
   <header class="container-fluid">
-      <h2>Weather Now</h2>
-    </header>    
-    
-    <splash class="splash"></splash>
-    
-    <main class="container-fluid">
-      <section class="row">
-          <search class="col-2">
-            <current-search class="row pl-2">
-              <label>Find Your Weather</label>
-              <input type="search" placeholder=" enter city or zip" id="search"><button id="searchBtn">Search</button></current-search>
-            <search-history class="row pl-3">HISTORY</search-history>
-          </search>
+    <h2>Weather Now</h2>
+  </header>
 
-          <weather-info class="col-9">
-              <today class="row border border-dark mb-1">
-              <section class="col-12" id="city-date"></section> 
-              <detail class="col-12">
-                <section class="row">
-                <heading class="col ml-4">
-                  <ul>
-                    <li>Temp:</li>
-                    <li>Humidity:</li>
-                    <li>Feels like:</li>
-                    <li>Wind:</li>
-                  </ul>
-                </heading>
-                <dataCon class="col">
-                  <ul id="data"></ul>
-                </dataCon>
-                <description class="col-9 pl-3">
-                  <ul></ul>
-                </description>
-                </section>
-              </detail>
-              </today>
-              <future class="row cols-5">
-              </future>
-          </weather-info>
-        </section>
-     </main>
+  <splash class="splash"></splash>
 
-    <footer class="footer">
-        
-      <p>
-          <h5>&copy; 2022</h5>
-      </p>
-    </footer>
-  
-   </body>
-<script src="./assets/javascript/script.js"></script>
+  <main class="container-fluid">
+    <section class="row search-bar">
+      <search class="col-2">
+        <current-search class="row pl-2">
+          <label>Find Your Weather</label>
+          <input type="search" placeholder=" enter city or zip" id="search-box"><button id="search-btn">Search</button>
+        </current-search>
+        <search-history class="row pl-3">
+          <label class='mb-2'>Search History</label></br>
+          <ul id="srch-list">
+
+          </ul>
+        </search-history>
+      </search>
+
+      <weather-info class="col-9">
+        <today class="row border border-dark mb-1">
+          <section class="col-12" id="city-date"></section>
+          <detail class="col-12">
+            <section class="row">
+              <heading class="col ml-4">
+                <ul>
+                  <li>Temp:</li>
+                  <li>Humidity:</li>
+                  <li>Feels like:</li>
+                  <li>Wind:</li>
+                </ul>
+              </heading>
+              <dataCon class="col">
+                <ul id="data"></ul>
+              </dataCon>
+              <description class="col-9 pl-3">
+                <ul></ul>
+              </description>
+            </section>
+          </detail>
+        </today>
+        <future class="row cols-5">
+        </future>
+      </weather-info>
+    </section>
+  </main>
+
+  <footer class="footer">
+
+    <p>
+    <h5>&copy; 2022</h5>
+    </p>
+  </footer>
+
+</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="./assets/javascript/script.js"></script>
+
 </html>
