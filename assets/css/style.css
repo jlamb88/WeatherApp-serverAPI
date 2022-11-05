@@ -12,7 +12,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-image: url('/assets/images/clouds.jpg');
+    background-image: url('../images/clouds.jpg');
     background-color: rgba(127, 152, 190, 0.7);
     background-blend-mode: lighten;
     padding: 2em;

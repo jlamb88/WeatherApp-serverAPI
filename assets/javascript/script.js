@@ -2,6 +2,8 @@ $("#search-btn").click(() =>
   weatherSearch($("#search-box").val())
 )
 
+
+
 function weatherSearch(loc) {
   apiKey = "20f82cbfb698e805cd598e366c3108b2";
   if ($.isNumeric(loc)) {
@@ -121,7 +123,7 @@ function weatherSearch(loc) {
           html: srchHist[i]
           })
         $('#srch-list').append(list)
-      }
+          }
       return;
     });
 }
