@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 $("#search-btn").click(() =>
   weatherSearch($("#search-box").val())
 )
@@ -5,19 +8,21 @@ $("#search-btn").click(() =>
 
 
 function weatherSearch(loc) {
-  apiKey = "20f82cbfb698e805cd598e366c3108b2";
+  apiKey = process.env.API_KEY;
   if ($.isNumeric(loc)) {
     fetchAPI =
-      'https://api.openweathermap.org/data/2.5/forecast?zip='+loc+'&units=imperial&appid='+apiKey;
-  } else {if (loc.includes(",")) {
-    stateChk = loc.slice(-2)
-    if (checkState(stateChk)) {
-      loc = loc + ", US";
-    }}
+      'https://api.openweathermap.org/data/2.5/forecast?zip=' + loc + '&units=imperial&appid=' + apiKey;
+  } else {
+    if (loc.includes(",")) {
+      stateChk = loc.slice(-2)
+      if (checkState(stateChk)) {
+        loc = loc + ", US";
+      }
+    }
     fetchAPI =
-      'https://api.openweathermap.org/data/2.5/forecast?q='+loc+'&units=imperial&appid='+apiKey;
+      'https://api.openweathermap.org/data/2.5/forecast?q=' + loc + '&units=imperial&appid=' + apiKey;
   }
-    
+
   $('#data').empty()
   $('future').empty()
   $('#city-date').empty()
@@ -59,9 +64,9 @@ function weatherSearch(loc) {
         };
         return weather;
       }
-      
+
       var cityLoc = dailyForecast[0];
-      var todayDt = moment(dailyForecast[1].dateTxt,"YYYY-MM-DD HH:mm:ss"
+      var todayDt = moment(dailyForecast[1].dateTxt, "YYYY-MM-DD HH:mm:ss"
       ).format("dddd MMMM, Do YYYY");
       var nowIcon = dailyForecast[1].weatherIcon;
       var nowTemp = dailyForecast[1].temp;
@@ -73,20 +78,20 @@ function weatherSearch(loc) {
       $("#city-date").append('<h3 id="city-loc">' + cityLoc + "</h3>");
       $("#city-date").append(
         '<img src="http://openweathermap.org/img/wn/' +
-          nowIcon +
-          '@2x.png" id="now-icon" alt="weather now icon"></br>'
+        nowIcon +
+        '@2x.png" id="now-icon" alt="weather now icon"></br>'
       );
       $("#city-date").append("<today>" + todayDt + "</today>");
       $("#data").append(
-        "<li>"+nowTemp+"<sup>o</sup></li><li>"+
-        nowHumidity+"%</li><li>"+
-        nowFeelsLike+"<sup>o</sup></li><li>" +
-        nowWind+" mph</li>"
-        );
+        "<li>" + nowTemp + "<sup>o</sup></li><li>" +
+        nowHumidity + "%</li><li>" +
+        nowFeelsLike + "<sup>o</sup></li><li>" +
+        nowWind + " mph</li>"
+      );
 
       for (i = 2; i <= 6; i++) {
         dayWkday = moment(
-        dailyForecast[i].dateTxt,"YYYY-MM-DD HH:mm:ss").format("dddd");
+          dailyForecast[i].dateTxt, "YYYY-MM-DD HH:mm:ss").format("dddd");
         dayTemp = dailyForecast[i].temp;
         dayIcon = dailyForecast[i].weatherIcon;
         dayHumidity = dailyForecast[i].humidity;
@@ -110,20 +115,20 @@ function weatherSearch(loc) {
         $("future").append(newCard);
       }
 
-      
-      srchHist=localStorage.getItem("history")||"[]"
-      srchHist=JSON.parse(srchHist)
+
+      srchHist = localStorage.getItem("history") || "[]"
+      srchHist = JSON.parse(srchHist)
       if (!srchHist.includes(cityLoc)) {
         srchHist.unshift(cityLoc)
       }
       localStorage.setItem("history", JSON.stringify(srchHist));
 
-      for (i=0;i<srchHist.length;i++) {
-          list = $("<li>", {
+      for (i = 0; i < srchHist.length; i++) {
+        list = $("<li>", {
           html: srchHist[i]
-          })
+        })
         $('#srch-list').append(list)
-          }
+      }
       return;
     });
 }
