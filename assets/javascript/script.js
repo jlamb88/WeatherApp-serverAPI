@@ -1,5 +1,5 @@
-const dotenv = require('dotenv')
-dotenv.config()
+require('dotenv').config()
+console.log(process.env)
 
 $("#search-btn").click(() =>
   weatherSearch($("#search-box").val())
