@@ -23,16 +23,20 @@ header {
     padding: 1em;
     margin-bottom: 1em;
     font-family: Arial, Helvetica, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
-    height: 6em;
+    height: 10em;
     background-image: linear-gradient(to right bottom, darkblue, aliceblue);
-    opacity: 0.5;
-    color: rgb(246, 246, 246)
+    color: rgb(246, 246, 246);
+    position: sticky;
+    top: 0;
+    z-index: 1
 }
 
 header h2 {
-    font-size: 2.4rem;
-    font-weight: 500;
-    font-stretch: extra-expanded;
+    font-size: 3.6rem;
+    font-weight: 750;
+    /* font-stretch: extra-expanded; */
+    font-family: Montserrat;
+    opacity: 1
 }
 
 a {
@@ -63,6 +67,19 @@ label {
     margin-left: 25px;
 }
 
+#hero-icon {
+    height: 100px;
+    width: 100px;
+    margin-right: 30px
+}
+
+#city-icon h1 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    margin-left: 10px
+}
+
 .card-text li,
 data,
 description,
@@ -73,10 +90,25 @@ search-history {
     color: darkslategrey;
 }
 
+.card-text li {
+    font: Montserrat;
+    font-size: 90%;
+}
+
 .search-bar {
     display: flex;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .sticky + main {
+    padding-top: 11em;
+  }
 
 #search-box {
     border: 1px solid;
@@ -90,7 +122,7 @@ search-history {
 }
 
 current-search {
-    height: 21rem;
+    height: 12rem;
     align-content: flex-start;
     justify-items: start;
     justify-content: flex-start;
@@ -101,21 +133,33 @@ search-history {
     width: 90%;
 }
 
-#now-icon,
-#card-icon {
+#now-icon {
     background-color: rgba(203, 238, 248, 0.8);
-    opacity: 1;
     width: 140px;
     height: 140px;
-
+    border-radius: 5px
 }
 
+#card-icon {
+    background-color: rgba(203, 238, 248, 0.8);
+    width: 100%;
+    border-radius: 5px
+    
+}
+
+today {
+    padding: 20px 0 0 20px
+}
 
 today,
 .card {
     background-color: rgba(224, 224, 210, 0.668);
     opacity: 0.9;
     border-radius: 5px;
+}
+
+.card-body {
+    padding: 1rem
 }
 
 input {
@@ -135,7 +179,7 @@ button {
 }
 
 .footer h2 {
-    font-size: 1.2rem;
+    font-size: 1 rem;
 }
 
 /* 

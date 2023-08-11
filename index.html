@@ -18,50 +18,53 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
+<body class ="font=montserrat">
 
-  <header class="container-fluid">
+  <header id="header" class="container-fluid row mr-6 my-6 align-center">
+    <img src="./assets/images/cloudy.png" title="hero-icon" id='hero-icon' alt="hero icon"></img>
     <h2>Weather Now</h2>
   </header>
 
-  <splash class="splash"></splash>
-
   <main class="container-fluid">
-    <section class="row search-bar">
+    <section class="row">
       <search class="col-2">
-        <current-search class="row pl-2">
+        <current-search class="row pl-3">
           <label>Find Your Weather</label>
-          <input type="search" placeholder=" enter city or zip" id="search-box"><button id="search-btn">Search</button>
+          <input type="search" placeholder=" Enter city or zip" id="search-box">
+          <button id="search-btn">Search</button>
         </current-search>
-        <search-history class="row pl-3">
+        <search-history class="col pl-3">
           <label class='mb-2'>Search History</label></br>
           <ul id="srch-list">
-
           </ul>
         </search-history>
       </search>
 
       <weather-info class="col-9">
-        <today class="row border border-dark mb-1">
-          <section class="col-12" id="city-date"></section>
-          <detail class="col-12">
+        <today class="row border-3 border-dark mt-3 mb-2">
+          <section class="col-2" id="city-icon"></section>
+          <section class="col-10 mt-5">
+            <date-conditions class="col">
+            <today-date class="mb-3">
+            </today-date>
             <section class="row">
-              <heading class="col ml-4">
+              <heading class="col-2 pl-2 ml-4">
                 <ul>
-                  <li>Temp:</li>
-                  <li>Humidity:</li>
-                  <li>Feels like:</li>
-                  <li>Wind:</li>
+                  <li>Temp</li>
+                  <li>Humidity</li>
+                  <li>Feels Like</li>
+                  <li>Wind</li>
                 </ul>
               </heading>
-              <dataCon class="col">
+              <dataCon class="col-2">
                 <ul id="data"></ul>
               </dataCon>
-              <description class="col-9 pl-3">
-                <ul></ul>
-              </description>
+              <!-- <description class="col-8 pl-3 bl-2 border-dark">
+                <h1>Weather Conditions</h1>
+              </description> -->
             </section>
-          </detail>
+          </date-conditions>
+        </section>
         </today>
         <future class="row cols-5">
         </future>
