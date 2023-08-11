@@ -32,8 +32,9 @@ function weatherSearch(loc) {
 
   $('#data').empty()
   $('future').empty()
-  $('#city-date').empty()
+  $('#city-icon').empty()
   $('#srch-list').empty()
+  $('#today-date').empty()
 
   fetch(fetchAPI)//"./assets/test.JSON"
     .then((response) => response.json())
