@@ -23,7 +23,7 @@ THEN I am again presented with current and future conditions for that city
 
 GitHub: https://github.com/jlamb88/6-WeatherApp-serverAPIs.git
 
-URL: https://jlamb88.github.io/6-WeatherApp-serverAPIs/
+URL: https://jlamb88.github.io/WeatherApp-serverAPIs/
 
 ## Usage
 
