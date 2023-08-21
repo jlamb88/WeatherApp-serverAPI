@@ -3,16 +3,6 @@ $("#search-btn").click(() =>
   weatherSearch($("#search-box").val())
 )
 
-// window.onscroll = function () { stickyHeader() };
-// var header = document.getElementById("header");
-// var scroll = header.offsetTop;
-// function stickyHeader() {
-//   if (window.pageYOffset >= scroll) {
-//     header.classList.add("sticky")
-//   } else {
-//     header.classList.remove("sticky");
-//   }
-// }
 
 function weatherSearch(loc) {
   const apiKey = "20f82cbfb698e805cd598e366c3108b2";
@@ -32,11 +22,11 @@ function weatherSearch(loc) {
 
   $('#data').empty()
   $('future').empty()
-  $('today').empty()
   $('#city-icon').empty()
   $('today-date').empty()
+  $('#srch-list').empty()
 
-  fetch(fetchAPI)//"./assets/test.JSON"
+  fetch(fetchAPI) //test JSON: "./assets/test.JSON"
     .then((response) => response.json())
     .then(function (data) {
       let pos = 0
@@ -64,7 +54,7 @@ function weatherSearch(loc) {
         return { date, temp, heatIndex, low, high, humidity, details, icon, wind, city }
       }
       weather = createWeatherObj({ ...data.list[pos], city: data.city.name })
-      formatDt = moment.utc(weather.date).local().format("dddd MMMM, Do YYYY")
+      formatDt = moment.utc(weather.date).local().format("dddd MMMM Do, YYYY")
       temp = Math.round(weather.temp)
       wind = Math.round(weather.wind)
       heatIndex = Math.round(weather.heatIndex)
@@ -74,7 +64,7 @@ function weatherSearch(loc) {
       $('#data').append(
         `<li>${temp}<sup>o</sup></li><li>${weather.humidity}%</li><li>${heatIndex}<sup>o</sup></li><li>${wind} mph</li>`
       );
-      // $("description").append(`<div class="ml-2"${weather.details}</div>`)
+
 
       let startDt = moment.utc(weather.date, "YYYY-MM-DD HH:mm:ss").local()
       let startHour = moment.utc(weather.date)
