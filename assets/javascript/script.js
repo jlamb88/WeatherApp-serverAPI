@@ -32,9 +32,9 @@ function weatherSearch(loc) {
 
   $('#data').empty()
   $('future').empty()
+  $('today').empty()
   $('#city-icon').empty()
-  $('#srch-list').empty()
-  $('#today-date').empty()
+  $('today-date').empty()
 
   fetch(fetchAPI)//"./assets/test.JSON"
     .then((response) => response.json())
@@ -69,9 +69,9 @@ function weatherSearch(loc) {
       wind = Math.round(weather.wind)
       heatIndex = Math.round(weather.heatIndex)
 
-      $("#city-icon").append(`<h3 id="city-loc"> ${weather.city} </h3><div class="mb-3"><img src="http://openweathermap.org/img/wn/${weather.icon}@2x.png" id="now-icon" alt="weather now icon"></div><h1>${weather.details}</h1>`)
-      $("today-date").append(`<strong>${formatDt}</strong>`)
-      $("#data").append(
+      $('#city-icon').append(`<h3 id="city-loc"> ${weather.city} </h3><div class="mb-3"><img src="http://openweathermap.org/img/wn/${weather.icon}@2x.png" id="now-icon" alt="weather now icon"></div><h1>${weather.details}</h1>`)
+      $('today-date').append(`<strong>${formatDt}</strong>`)
+      $('#data').append(
         `<li>${temp}<sup>o</sup></li><li>${weather.humidity}%</li><li>${heatIndex}<sup>o</sup></li><li>${wind} mph</li>`
       );
       // $("description").append(`<div class="ml-2"${weather.details}</div>`)
