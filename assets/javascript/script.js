@@ -24,6 +24,7 @@ function weatherSearch(loc) {
   $('future').empty()
   $('#city-icon').empty()
   $('today-date').empty()
+  $('heading').empty()
   $('#srch-list').empty()
 
   fetch(fetchAPI) //test JSON: "./assets/test.JSON"
@@ -61,6 +62,7 @@ function weatherSearch(loc) {
 
       $('#city-icon').append(`<h3 id="city-loc"> ${weather.city} </h3><div class="mb-3"><img src="http://openweathermap.org/img/wn/${weather.icon}@2x.png" id="now-icon" alt="weather now icon"></div><h1>${weather.details}</h1>`)
       $('today-date').append(`<strong>${formatDt}</strong>`)
+      $('heading').append('<ul><li>Temp</li><li>Humidity</li><li>Feels Like</li><li>Wind</li></ul>')
       $('#data').append(
         `<li>${temp}<sup>o</sup></li><li>${weather.humidity}%</li><li>${heatIndex}<sup>o</sup></li><li>${wind} mph</li>`
       );
@@ -101,16 +103,15 @@ function weatherSearch(loc) {
 
       }
 
-      let srchHist = localStorage.getItem("history") || "[]"
+      let srchHist = localStorage.getItem("loc-hist") || "[]"
       srchHist = JSON.parse(srchHist)
       if (!srchHist.includes(weather.city)) {
         srchHist.unshift(weather.city)
       }
-      localStorage.setItem("history", JSON.stringify(srchHist));
-      console.log(srchHist)
+      localStorage.setItem("loc-hist", JSON.stringify(srchHist));
+
 
       for (const history of srchHist) {
-        console.log(history)
         list = $("<li>", {
           html: `${history}`
         })
